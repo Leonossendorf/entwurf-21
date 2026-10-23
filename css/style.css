@@ -1,0 +1,225 @@
+@font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("../fonts/source-sans-3.woff2") format("woff2"); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("../fonts/caveat.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+
+:root {
+  --anthrazit: #26272a;
+  --anthrazit-2: #3a3b3f;
+  --holz: #c99a5e;
+  --holz-h: #e6c896;
+  --holz-d: #8a5d30;
+  --papier: #f4efe6;
+  --papier-2: #ebe3d5;
+  --ink: #1f1d1a;
+  --ink-2: #5b544b;
+  --rot: #a8322a;
+  --rot-d: #8a261f;
+  --gruen: #2a5e38;
+  --linie: #d9cfbf;
+  --kopf: 68px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--kopf) + 12px); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 400 1.0625rem/1.6 "Source Sans 3", system-ui, sans-serif; color: var(--ink); background: var(--papier); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; line-height: 1.02; margin: 0; letter-spacing: .005em; }
+h2 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); text-transform: uppercase; }
+h3 { font-size: 1.5rem; text-transform: uppercase; }
+.wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+.kicker { font: 600 .95rem/1.2 "Barlow Condensed", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--holz-h); margin: 0 0 .7rem; }
+.kicker.dunkel { color: var(--holz-d); }
+.lead { font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.5; margin: 1rem 0 0; max-width: 40rem; }
+.lead.dunkel { color: var(--ink-2); }
+
+.entwurf-band { background: var(--anthrazit); color: #d8d2c6; font-size: .8rem; text-align: center; padding: .35rem 12px; letter-spacing: .02em; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 50px; padding: .75rem 1.3rem; border-radius: 3px; font: 700 1.1rem/1 "Barlow Condensed", sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
+.btn-rot { background: var(--rot); color: #fff; }
+.btn-rot:hover { background: var(--rot-d); }
+.btn-hell { border-color: rgba(255,255,255,.8); color: #fff; }
+.btn-hell:hover { background: #fff; color: var(--anthrazit); }
+.btn-voll { width: 100%; }
+.btn-tel { background: var(--anthrazit); color: #fff; min-height: 44px; padding: .55rem 1rem; }
+.btn-tel svg { width: 18px; height: 18px; fill: var(--holz-h); }
+.btn-tel:hover { background: var(--rot); }
+
+/* Kopf */
+.kopf { position: sticky; top: 0; z-index: 30; background: rgba(244,239,230,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--linie); }
+.kopf-in { display: flex; align-items: center; gap: 1.5rem; min-height: var(--kopf); }
+.marke { display: flex; align-items: center; gap: .7rem; text-decoration: none; margin-right: auto; }
+.marke svg { width: 46px; height: 40px; flex: none; }
+.marke-text b { display: block; font: 700 1.45rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: .04em; }
+.marke-text i { font-style: normal; color: var(--rot); }
+.marke-text small { display: block; font-size: .78rem; color: var(--ink-2); letter-spacing: .04em; margin-top: .2rem; }
+.nav { display: flex; gap: 1.4rem; }
+.nav a { text-decoration: none; font: 600 1.05rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-2); padding: .4rem 0; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--ink); border-color: var(--holz); }
+
+/* Hero */
+.hero { position: relative; min-height: min(78vh, 720px); display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: var(--anthrazit); }
+.hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,18,16,.82) 0%, rgba(20,18,16,.55) 42%, rgba(20,18,16,.05) 75%), linear-gradient(0deg, rgba(20,18,16,.55), rgba(20,18,16,0) 45%); }
+.hero-in { position: relative; z-index: 2; padding: 5rem 0 4.5rem; }
+.hero h1 { font-size: clamp(2.9rem, 7vw, 5.6rem); text-transform: uppercase; max-width: 14ch; }
+.hero .lead { color: #efe8dc; max-width: 34rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.bsp { position: absolute; z-index: 3; right: 10px; bottom: 10px; font-size: .72rem; color: #fff; background: rgba(0,0,0,.45); padding: .15rem .45rem; border-radius: 2px; letter-spacing: .03em; }
+.bsp-hero { bottom: 14px; right: 14px; }
+
+/* Gewerke */
+.gewerke { padding: 6rem 0 5rem; }
+.kopfzeile { max-width: 46rem; }
+.dach-figur { margin: 1.5rem auto 0; max-width: 980px; }
+.dach-svg { width: 100%; height: auto; overflow: visible; }
+.dach-svg .bahn { transition: opacity .7s ease-out, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+.dach-svg .ziegel-schatten, .dach-svg .first { transition: opacity .8s ease-out 1.5s; }
+.js .dach-figur:not(.drauf) .bahn { opacity: 0; transform: translateY(14px); }
+.js .dach-figur:not(.drauf) .ziegel-schatten { opacity: 0; }
+.zwei { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: start; margin-top: 2rem; }
+.gewerk h3 { display: flex; align-items: center; gap: .8rem; font-size: 1.9rem; padding-bottom: .7rem; border-bottom: 3px solid var(--holz); }
+.gewerk-ziegel h3 { border-color: var(--anthrazit-2); }
+.gewerk ul { list-style: none; margin: 1rem 0 0; padding: 0; }
+.gewerk li { padding: .55rem 0 .55rem 1.7rem; border-bottom: 1px solid var(--linie); position: relative; font-size: 1.1rem; }
+.gewerk li::before { content: ""; position: absolute; left: 0; top: 1.05rem; width: 14px; height: 8px; border-left: 3px solid var(--holz-d); border-bottom: 3px solid var(--holz-d); transform: rotate(-45deg) translateY(-4px); }
+.gewerk-ziegel li::before { border-color: var(--anthrazit-2); }
+.und { font: 700 5.5rem/1 "Barlow Condensed", sans-serif; color: var(--rot); padding-top: .2rem; }
+
+/* Kacheln */
+.arbeiten { background: var(--anthrazit); color: #fff; padding: 5rem 0; }
+.kacheln { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 2rem; }
+.kachel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; text-decoration: none; overflow: hidden; border-radius: 3px; background: #111; }
+.kachel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.kachel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,14,12,.9) 0%, rgba(15,14,12,.35) 50%, rgba(15,14,12,0) 75%); }
+.kachel .bsp { top: 10px; bottom: auto; }
+.kachel-t { position: relative; z-index: 2; padding: 1.2rem 1.2rem .3rem; color: #e9e2d6; font-size: 1rem; line-height: 1.4; }
+.kachel-t b { display: block; font: 700 1.6rem/1.05 "Barlow Condensed", sans-serif; text-transform: uppercase; color: #fff; margin-bottom: .35rem; }
+.kachel-a { position: relative; z-index: 2; padding: .2rem 1.2rem 1.2rem; font: 700 1rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--holz-h); }
+.kachel-a::after { content: " →"; }
+.kachel:hover img { transform: scale(1.04); }
+
+/* Ablauf */
+.ablauf { padding: 5rem 0; border-bottom: 1px solid var(--linie); }
+.schritte { list-style: none; counter-reset: s; margin: 2.2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.schritte li { counter-increment: s; position: relative; padding: 3.6rem 1.4rem 0 0; }
+.schritte li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 2.6rem; height: 2.6rem; display: grid; place-items: center; font: 700 1.4rem/1 "Barlow Condensed", sans-serif; color: #fff; background: var(--holz-d); clip-path: polygon(50% 0, 100% 38%, 100% 100%, 0 100%, 0 38%); padding-top: .35rem; }
+.schritte li::after { content: ""; position: absolute; left: 3.2rem; right: 1rem; top: 1.55rem; height: 2px; background: repeating-linear-gradient(90deg, var(--holz) 0 10px, transparent 10px 16px); }
+.schritte li:last-child::after { display: none; }
+.schritte b { display: block; font: 700 1.45rem/1.1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.schritte span { display: block; color: var(--ink-2); margin-top: .35rem; }
+
+/* Anfrage */
+.anfrage { padding: 5.5rem 0; background: var(--papier-2); }
+.anfrage-in { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3.5rem; align-items: start; }
+.anfrage-text { position: sticky; top: calc(var(--kopf) + 30px); }
+.anfrage-text p { color: var(--ink-2); font-size: 1.15rem; }
+.lieber { margin-top: 1.6rem; font-weight: 600; }
+.lieber a { font: 700 1.9rem/1.2 "Barlow Condensed", sans-serif; color: var(--rot); text-decoration: none; letter-spacing: .03em; }
+.krone-deko { width: 170px; margin-top: 1.5rem; }
+.krone-deko svg { width: 100%; height: auto; }
+.formular { background: #fffdf9; padding: 2rem; border-radius: 4px; box-shadow: 0 1px 0 var(--linie), 0 18px 40px -24px rgba(40,25,10,.35); }
+.hinweis-form { margin: 0 0 1.2rem; font-size: .88rem; color: var(--rot-d); background: #f6e7e2; padding: .45rem .7rem; border-radius: 3px; }
+fieldset { border: 0; padding: 0; margin: 0 0 1.3rem; }
+legend, .feld > span { font-weight: 700; font-size: 1rem; margin-bottom: .5rem; display: block; }
+legend small, .feld small { font-weight: 400; color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips label { position: relative; }
+.chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chips span { display: inline-block; padding: .6rem .9rem; border: 1.5px solid var(--linie); border-radius: 3px; background: #fff; font-size: 1rem; line-height: 1.2; transition: background-color .15s, border-color .15s, color .15s; }
+.chips input:checked + span { background: var(--anthrazit); border-color: var(--anthrazit); color: #fff; }
+.chips input:focus-visible + span { outline: 3px solid var(--holz); outline-offset: 2px; }
+.reihe { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.feld { display: block; margin-bottom: 1.1rem; }
+.feld input, .feld select, .feld textarea { width: 100%; font: inherit; padding: .7rem .8rem; border: 1.5px solid var(--linie); border-radius: 3px; background: #fff; color: var(--ink); min-height: 48px; }
+.feld input:focus, .feld select:focus, .feld textarea:focus { outline: none; border-color: var(--holz-d); box-shadow: 0 0 0 3px rgba(201,154,94,.3); }
+.datei input { padding: .55rem; background: var(--papier); }
+.zusammenfassung { margin-top: 1.2rem; padding: 1rem 1.2rem; border-left: 4px solid var(--gruen); background: #eef3ec; font-size: .98rem; }
+.zusammenfassung h4 { margin: 0 0 .4rem; font: 700 1.25rem/1.1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.zusammenfassung ul { margin: .3rem 0 .5rem; padding-left: 1.1rem; }
+
+/* Inhaber */
+.inhaber { padding: 5.5rem 0 5rem; }
+.personen { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 1.5rem; margin-top: 2rem; align-items: start; }
+.person { margin: 0; }
+.portrait { aspect-ratio: 1 / 1; border: 2px dashed var(--holz); border-radius: 4px; display: grid; place-items: center; align-content: center; gap: .6rem; color: var(--holz-d); background: repeating-linear-gradient(135deg, rgba(201,154,94,.08) 0 12px, transparent 12px 24px); text-align: center; padding: 1rem; }
+.portrait svg { width: 38%; }
+.portrait span { font: 600 1.35rem/1.1 "Caveat", cursive; }
+.person figcaption { margin-top: .7rem; color: var(--ink-2); }
+.person figcaption b { display: block; font: 700 1.6rem/1.1 "Barlow Condensed", sans-serif; text-transform: uppercase; color: var(--ink); }
+.ort { background: var(--anthrazit); color: #e9e2d6; padding: 1.8rem; border-radius: 4px; }
+.ort b { color: #fff; font: 700 1.5rem/1.2 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.ort a { color: #fff; }
+.ort .kicker { color: var(--holz-h); }
+.pfeil { font: 700 1.05rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--holz-h) !important; text-decoration: none; }
+.pfeil::after { content: " →"; }
+.baustellen { margin-top: 4rem; }
+.baustellen p { color: var(--ink-2); margin: .5rem 0 1.3rem; }
+.rahmen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rahmen div { aspect-ratio: 16 / 9; border: 2px dashed var(--linie); border-radius: 4px; display: grid; place-items: center; background: #f8f4ed; }
+.rahmen span { font: 600 1.6rem/1 "Caveat", cursive; color: var(--ink-2); }
+
+/* Fuß */
+.fuss { background: #1b1c1e; color: #bdb6aa; padding: 3.5rem 0 6rem; font-size: .95rem; }
+.fuss-in { display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 2rem; }
+.fuss a { color: #fff; }
+.fuss-marke { font: 700 1.6rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; color: #fff; letter-spacing: .04em; }
+.fuss-hinweis b { color: #e8e1d5; }
+
+.handy-leiste { display: none; }
+
+@media (max-width: 980px) {
+  .nav { display: none; }
+  .kacheln { grid-template-columns: 1fr 1fr; }
+  .schritte { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+  .schritte li:nth-child(2)::after { display: none; }
+  .anfrage-in { grid-template-columns: 1fr; gap: 2rem; }
+  .anfrage-text { position: static; }
+  .krone-deko { display: none; }
+  .personen { grid-template-columns: 1fr 1fr; }
+  .ort { grid-column: 1 / -1; }
+  .fuss-in { grid-template-columns: 1fr 1fr; }
+  .fuss-hinweis { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  :root { --kopf: 60px; }
+  body { font-size: 1.02rem; padding-bottom: 64px; }
+  .wrap { width: min(1180px, 100% - 32px); }
+  .marke svg { width: 38px; height: 34px; }
+  .marke-text b { font-size: 1.2rem; }
+  .marke-text small { font-size: .7rem; }
+  .btn-tel span { display: none; }
+  .btn-tel { width: 46px; padding: 0; }
+  .hero::after { background: linear-gradient(0deg, rgba(20,18,16,.94) 0%, rgba(20,18,16,.72) 50%, rgba(20,18,16,.4) 100%); }
+  .hero-cta .btn-hell { display: none; }
+  .hero { min-height: calc(100svh - 150px); }
+  .hero-in { padding: 3rem 0 2.4rem; }
+  .hero-cta .btn { flex: 1 1 100%; }
+  .gewerke { padding: 4rem 0 3.5rem; }
+  .dach-figur { margin-inline: -8px; }
+  .zwei { grid-template-columns: 1fr; gap: .5rem; }
+  .und { font-size: 3.2rem; text-align: center; line-height: .8; }
+  .kacheln { grid-template-columns: 1fr; }
+  .kachel { min-height: 280px; }
+  .arbeiten, .ablauf, .anfrage, .inhaber { padding: 3.8rem 0; }
+  .schritte { grid-template-columns: 1fr; row-gap: 1.6rem; }
+  .schritte li { padding: 0 0 0 3.6rem; }
+  .schritte li::after { display: none; }
+  .formular { padding: 1.3rem; }
+  .reihe { grid-template-columns: 1fr; gap: 0; }
+  .personen { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .person figcaption b { font-size: 1.3rem; }
+  .portrait span { font-size: 1.1rem; }
+  .rahmen { grid-template-columns: 1fr; }
+  .rahmen div { aspect-ratio: 16 / 7; }
+  .fuss-in { grid-template-columns: 1fr; }
+  .handy-leiste { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; box-shadow: 0 -6px 18px rgba(0,0,0,.18); }
+  .handy-leiste a { display: grid; place-items: center; min-height: 58px; font: 700 1.2rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; color: #fff; background: var(--anthrazit); }
+  .handy-leiste a:first-child { background: var(--rot); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .dach-figur:not(.drauf) .bahn, .js .dach-figur:not(.drauf) .ziegel-schatten { opacity: 1; transform: none; }
+  .kachel img { transition: none; }
+}
