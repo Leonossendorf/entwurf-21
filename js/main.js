@@ -7,7 +7,7 @@ document.documentElement.classList.add('js');
   if (!('IntersectionObserver' in window)) { fig.classList.add('drauf'); return; }
   var io = new IntersectionObserver(function (e) {
     if (e[0].isIntersecting) { fig.classList.add('drauf'); io.disconnect(); }
-  }, { threshold: 0.45 });
+  }, { threshold: 0.3 });
   io.observe(fig);
 })();
 
